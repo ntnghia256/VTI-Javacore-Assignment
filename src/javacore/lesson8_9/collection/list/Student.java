@@ -1,4 +1,4 @@
-package javacore.lesson8_9.collection;
+package javacore.lesson8_9.collection.list;
 
 public class Student {
     public static int counter = 1;

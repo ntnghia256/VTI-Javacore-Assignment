@@ -1,7 +1,6 @@
-package javacore.lesson8_9.collection;
+package javacore.lesson8_9.collection.list;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -100,6 +99,14 @@ public class Main {
         System.out.println("List student after deleted");
         for (Student s : students) {
             System.out.println(s);
+        }
+
+        // Create ArrayList and copy all list students to it.
+        ArrayList<Student> copyListStudents = new ArrayList<>();
+        copyListStudents.addAll(students);
+        System.out.println("List students had copied");
+        for (Student stu : copyListStudents) {
+            System.out.println(stu);
         }
     }
 }
