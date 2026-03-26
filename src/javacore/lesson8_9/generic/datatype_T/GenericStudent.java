@@ -1,21 +1,19 @@
-package javacore.lesson8_9.collection.list;
+package javacore.lesson8_9.generic.datatype_T;
 
-public class Student {
-    public static int counter = 1;
-
-    private int id;
+public class GenericStudent<T> {
+    private T id;
     private String name;
 
-    public Student(String name) {
+    public GenericStudent(T id, String name) {
+        this.id = id;
         this.name = name;
-        this.id = counter++;
     }
 
-    public int getId() {
+    public T getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(T id) {
         this.id = id;
     }
 
@@ -29,7 +27,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "GenericStudent{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

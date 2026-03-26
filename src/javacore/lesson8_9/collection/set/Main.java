@@ -1,11 +1,11 @@
 package javacore.lesson8_9.collection.set;
 
-import javacore.lesson8_9.collection.list.Student;
+import javacore.lesson8_9.collection.Student;
 
 import java.util.*;
 
 public class Main {
-    private static void printAllElement(Set<Student> students) {
+    public static void printAllElement(Set<Student> students) {
         System.out.println("List elements of Set: ");
         for (Student s : students) {
             System.out.println(s);

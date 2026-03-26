@@ -1,5 +1,7 @@
 package javacore.lesson8_9.collection.list;
 
+import javacore.lesson8_9.collection.Student;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -32,7 +34,7 @@ public class Main {
     }
 
     // Get duplicate student
-    public static Student getDuplicateStudent(List<Student> students) {
+    private static Student getDuplicateStudent(List<Student> students) {
         for (int i = 0; i < students.size(); i++) {
             for (int j = i + 1; j < students.size(); j++) {
                 if (students.get(i).getName().equals(students.get(j).getName())) {
@@ -42,6 +44,8 @@ public class Main {
         }
         return null;
     }
+
+    // Print all student sorted follow name
 
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>();

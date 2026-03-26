@@ -1,10 +1,11 @@
 package javacore.lesson8_9.collection.map;
 
-import javacore.lesson8_9.collection.list.Student;
+import javacore.lesson8_9.collection.Student;
+import javacore.lesson8_9.collection.set.Main;
 
 import java.util.*;
 
-public class Question6 {
+public class Question6_7 {
     // Print all element in Map
     public static void printAllElement(Map<Integer, Student> studentMap) {
         for (Map.Entry<Integer, Student> entry : studentMap.entrySet()) {
@@ -39,5 +40,10 @@ public class Question6 {
                 ))
                 .forEach(entry ->
                         System.out.println(entry.getKey() + " -> " + entry.getValue()));
+
+        // Convert Map student to Set
+        Set<Student> setStudents = new HashSet<>();
+        studentMap.forEach((key, value) -> setStudents.add(value));
+        Main.printAllElement(setStudents);
     }
 }
