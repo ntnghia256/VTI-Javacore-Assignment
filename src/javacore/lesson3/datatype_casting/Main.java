@@ -1,3 +1,5 @@
+package javacore.lesson3.datatype_casting;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
