@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ConnectionBasic {
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/db_testing_system";
+    private static final String DB_URL = "jdbc:mysql://localhost:3304/db_testing_system";
     private static final String USER = "root";
     private static final String PASS = "root";
 
@@ -26,7 +26,7 @@ public class ConnectionBasic {
         return null;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Connection connection = connection();
 
         // PositionDAO
@@ -40,18 +40,40 @@ public class ConnectionBasic {
 //        positonDAO.insertPositionData(insertSql, connection, "Play");
 
         // DepartmentDAO
+        // Create department
         DepartmentDAO departmentDAO = new DepartmentDAO();
+//        departmentDAO.createDepartment(connection, "Test");
+
         List<Department> departmentList = departmentDAO.getDepartments(connection);
         departmentList.forEach(System.out::println);
 
         // Check name Department
-        System.out.println("Enter the Department name please: ...");
-        String departmentName = sc.nextLine();
-        boolean isExistsDepartment = departmentDAO.isDepartmentNameExists(connection, departmentName);
-        if (isExistsDepartment) {
-            System.out.println("Department already exists");
-        } else  {
-            System.out.println("Department does not exist");
+//        System.out.println("Enter the Department name please: ...");
+//        String departmentName = sc.nextLine();
+//        boolean isExistsDepartment = departmentDAO.isDepartmentNameExists(connection, departmentName);
+//        if (isExistsDepartment) {
+//            System.out.println("Department already exists");
+//        } else  {
+//            System.out.println("Department does not exist");
+//        }
+
+//        System.out.println("Enter the Department id please: ...");
+//        int departmentId = sc.nextInt();
+//        boolean isExist = departmentDAO.isDepartmentIdExists(connection, departmentId);
+//        if (isExistsDepartment) {
+//            System.out.println("Department already exists");
+//        } else  {
+//            System.out.println("Department does not exist");
+//        }
+
+        // Delete department by id
+        System.out.println("Enter the id department need to delete...");
+        int id = sc.nextInt();
+        boolean isExistDepartment = departmentDAO.isDepartmentIdExists(connection, id);
+        if (isExistDepartment) {
+            departmentDAO.deleteDepartmentUsingProcedure(connection, id);
+        } else {
+            throw new Exception("Can not find department which has id: " + id);
         }
     }
 }
