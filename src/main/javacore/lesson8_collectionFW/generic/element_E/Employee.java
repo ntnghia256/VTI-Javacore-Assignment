@@ -1,4 +1,4 @@
-package main.javacore.lesson8.generic.element_E;
+package main.javacore.lesson8_collectionFW.generic.element_E;
 
 import java.util.Arrays;
 

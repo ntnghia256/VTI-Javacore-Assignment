@@ -1,6 +1,6 @@
-package main.javacore.lesson8.collection.comparing;
+package main.javacore.lesson8_collectionFW.collection.comparing;
 
-import main.javacore.lesson8.collection.Student;
+import main.javacore.lesson8_collectionFW.collection.Student;
 
 import java.util.ArrayList;
 import java.util.Comparator;

@@ -1,7 +1,7 @@
-package main.javacore.lesson8.generic;
+package main.javacore.lesson8_collectionFW.generic;
 
-import main.javacore.lesson8.generic.datatype_T.GenericStudent;
-import main.javacore.lesson8.generic.element_E.Employee;
+import main.javacore.lesson8_collectionFW.generic.datatype_T.GenericStudent;
+import main.javacore.lesson8_collectionFW.generic.element_E.Employee;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package main.javacore.lesson8.generic.k_v_generic.entity;
+package main.javacore.lesson8_collectionFW.generic.k_v_generic.entity;
 
 public class Staff<K extends Number, V> extends MyMap<K, V> {
 

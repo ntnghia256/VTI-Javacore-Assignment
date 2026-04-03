@@ -1,6 +1,6 @@
-package main.javacore.lesson8.wildcard;
+package main.javacore.lesson8_collectionFW.wildcard;
 
-import main.javacore.lesson8.wildcard.entity.MyMath;
+import main.javacore.lesson8_collectionFW.wildcard.entity.MyMath;
 
 import java.util.ArrayList;
 

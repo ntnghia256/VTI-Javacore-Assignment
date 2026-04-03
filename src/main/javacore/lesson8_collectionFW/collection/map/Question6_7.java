@@ -1,7 +1,7 @@
-package main.javacore.lesson8.collection.map;
+package main.javacore.lesson8_collectionFW.collection.map;
 
-import main.javacore.lesson8.collection.Student;
-import main.javacore.lesson8.collection.set.Main;
+import main.javacore.lesson8_collectionFW.collection.Student;
+import main.javacore.lesson8_collectionFW.collection.set.Main;
 
 import java.util.*;
 

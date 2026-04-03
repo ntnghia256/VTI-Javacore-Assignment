@@ -1,4 +1,4 @@
-package main.javacore.lesson8.generic.datatype_T;
+package main.javacore.lesson8_collectionFW.generic.datatype_T;
 
 public class GenericStudent<T> {
     private T id;

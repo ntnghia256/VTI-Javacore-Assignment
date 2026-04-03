@@ -1,8 +1,8 @@
-package main.javacore.lesson8.generic.k_v_generic;
+package main.javacore.lesson8_collectionFW.generic.k_v_generic;
 
-import main.javacore.lesson8.generic.k_v_generic.entity.MyMap;
-import main.javacore.lesson8.generic.k_v_generic.entity.Phone;
-import main.javacore.lesson8.generic.k_v_generic.entity.Staff;
+import main.javacore.lesson8_collectionFW.generic.k_v_generic.entity.MyMap;
+import main.javacore.lesson8_collectionFW.generic.k_v_generic.entity.Phone;
+import main.javacore.lesson8_collectionFW.generic.k_v_generic.entity.Staff;
 
 public class Run {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package main.javacore.lesson8.wildcard.entity;
+package main.javacore.lesson8_collectionFW.wildcard.entity;
 
 public class MyMath<T extends Number> {
 

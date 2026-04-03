@@ -1,4 +1,4 @@
-package main.javacore.lesson8.collection.stack_queue;
+package main.javacore.lesson8_collectionFW.collection.stack_queue;
 
 import java.util.*;
 

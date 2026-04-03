@@ -1,6 +1,6 @@
-package main.javacore.lesson8.collection.set;
+package main.javacore.lesson8_collectionFW.collection.set;
 
-import main.javacore.lesson8.collection.Student;
+import main.javacore.lesson8_collectionFW.collection.Student;
 
 import java.util.*;
 
