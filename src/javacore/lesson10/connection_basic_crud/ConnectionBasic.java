@@ -1,6 +1,7 @@
 package javacore.lesson10.connection_basic_crud;
 
 import javacore.lesson10.connection_basic_crud.entity.Department;
+import javacore.lesson10.connection_basic_crud.jdbcUtils.JdbcUtils;
 
 import java.sql.*;
 import java.util.List;
@@ -8,26 +9,10 @@ import java.util.Scanner;
 
 public class ConnectionBasic {
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3304/db_testing_system";
-    private static final String USER = "root";
-    private static final String PASS = "root";
-
     private static Scanner sc = new Scanner(System.in);
 
-    private static Connection connection() {
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            System.out.println("Connection established");
-            return connection;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public static void main(String[] args) throws Exception {
-        Connection connection = connection();
+        Connection connection = JdbcUtils.isConnectedForTesting();
 
         // PositionDAO & EmployeeDAO
         EmployeeDAO employeeDAO = new EmployeeDAO();
@@ -79,18 +64,18 @@ public class ConnectionBasic {
 
         // Transaction example
         // Delete all employees belong department 3 and delete department 3
-        System.out.println("Enter the id of department: ");
-        int departmentId = sc.nextInt();
-        connection.setAutoCommit(false);
-        try {
-            employeeDAO.deleteEmployeesByIdDepartment(connection, departmentId);
-            departmentDAO.deleteDepartmentUsingProcedure(connection, departmentId);
-            System.out.println("Transaction Commit!");
-        } catch (Exception e) {
-            e.printStackTrace();
-            connection.rollback();
-            System.out.println("Transaction rollback!");
-        }
-        connection.setAutoCommit(true);
+//        System.out.println("Enter the id of department: ");
+//        int departmentId = sc.nextInt();
+//        connection.setAutoCommit(false);
+//        try {
+//            employeeDAO.deleteEmployeesByIdDepartment(connection, departmentId);
+//            departmentDAO.deleteDepartmentUsingProcedure(connection, departmentId);
+//            System.out.println("Transaction Commit!");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            connection.rollback();
+//            System.out.println("Transaction rollback!");
+//        }
+//        connection.setAutoCommit(true);
     }
 }
