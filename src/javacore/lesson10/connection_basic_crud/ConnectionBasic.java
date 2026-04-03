@@ -29,7 +29,8 @@ public class ConnectionBasic {
     public static void main(String[] args) throws Exception {
         Connection connection = connection();
 
-        // PositionDAO
+        // PositionDAO & EmployeeDAO
+        EmployeeDAO employeeDAO = new EmployeeDAO();
         PositonDAO positonDAO = new PositonDAO();
         // Get position data
         String selectSql = "SELECT position_id, position_name FROM position";
@@ -67,13 +68,29 @@ public class ConnectionBasic {
 //        }
 
         // Delete department by id
-        System.out.println("Enter the id department need to delete...");
-        int id = sc.nextInt();
-        boolean isExistDepartment = departmentDAO.isDepartmentIdExists(connection, id);
-        if (isExistDepartment) {
-            departmentDAO.deleteDepartmentUsingProcedure(connection, id);
-        } else {
-            throw new Exception("Can not find department which has id: " + id);
+//        System.out.println("Enter the id department need to delete...");
+//        int id = sc.nextInt();
+//        boolean isExistDepartment = departmentDAO.isDepartmentIdExists(connection, id);
+//        if (isExistDepartment) {
+//            departmentDAO.deleteDepartmentUsingProcedure(connection, id);
+//        } else {
+//            throw new Exception("Can not find department which has id: " + id);
+//        }
+
+        // Transaction example
+        // Delete all employees belong department 3 and delete department 3
+        System.out.println("Enter the id of department: ");
+        int departmentId = sc.nextInt();
+        connection.setAutoCommit(false);
+        try {
+            employeeDAO.deleteEmployeesByIdDepartment(connection, departmentId);
+            departmentDAO.deleteDepartmentUsingProcedure(connection, departmentId);
+            System.out.println("Transaction Commit!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            connection.rollback();
+            System.out.println("Transaction rollback!");
         }
+        connection.setAutoCommit(true);
     }
 }
